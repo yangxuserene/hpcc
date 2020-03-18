@@ -82,8 +82,8 @@ HPLlib       = $(LIBdir)/libhpl.a
 # used. The variable MPdir is only used for defining MPinc and MPlib.
 #
 MPdir        = /opt/amazon/openmpi
-MPinc        = /opt/amazon/openmpi/include
-MPlib        = /opt/amazon/openmpi/lib
+MPinc        =
+MPlib        =
 #
 # ----------------------------------------------------------------------
 # - Linear Algebra library (BLAS or VSIPL) -----------------------------
