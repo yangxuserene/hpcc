@@ -3,8 +3,6 @@
 arch = UNKNOWN
 include ../../../Make.$(arch)
 
-echo "let me be added"
-
 HDEP1 = ../../../include/hpl_misc.h ../../../include/hpl_blas.h ../../../include/hpl_auxil.h ../../../include/hpl_test.h
 OBJS1 = ../../../src/auxil/HPL_dlacpy.o ../../../src/auxil/HPL_dlatcpy.o ../../../src/auxil/HPL_fprintf.o ../../../src/auxil/HPL_warn.o ../../../src/auxil/HPL_abort.o ../../../src/auxil/HPL_dlaprnt.o ../../../src/auxil/HPL_dlange.o
 HDEP2 = ../../../include/hpl_misc.h ../../../include/hpl_blas.h ../../../include/hpl_auxil.h
