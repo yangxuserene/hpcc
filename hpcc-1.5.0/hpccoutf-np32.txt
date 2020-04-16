@@ -1,0 +1,232 @@
+########################################################################
+This is the DARPA/DOE HPC Challenge Benchmark version 1.5.0 October 2012
+Produced by Jack Dongarra and Piotr Luszczek
+Innovative Computing Laboratory
+University of Tennessee Knoxville and Oak Ridge National Laboratory
+
+See the source files for authors of specific codes.
+Compiled on Feb 19 2020 at 23:33:43
+Current time (1587011715) is Thu Apr 16 04:35:15 2020
+
+Hostname: '6708fe130d65'
+########################################################################
+================================================================================
+HPLinpack 2.0  --  High-Performance Linpack benchmark  --   September 10, 2008
+Written by A. Petitet and R. Clint Whaley,  Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+================================================================================
+
+An explanation of the input/output parameters follows:
+T/V    : Wall time / encoded variant.
+N      : The order of the coefficient matrix A.
+NB     : The partitioning blocking factor.
+P      : The number of process rows.
+Q      : The number of process columns.
+Time   : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+
+The following parameter values will be used:
+
+N      :   40000 
+NB     :     384 
+PMAP   : Column-major process mapping
+P      :       2 
+Q      :       2 
+PFACT  :    Left 
+NBMIN  :       4 
+NDIV   :       2 
+RFACT  :    Left 
+BCAST  :   1ring 
+DEPTH  :       0 
+SWAP   : Binary-exchange
+L1     : no-transposed form
+U      : no-transposed form
+EQUIL  : no
+ALIGN  : 8 double precision words
+
+--------------------------------------------------------------------------------
+
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+      ||Ax-b||_oo / ( eps * ( || x ||_oo * || A ||_oo + || b ||_oo ) * N )
+- The relative machine precision (eps) is taken to be               1.110223e-16
+- Computational tests pass if scaled residuals are less than                16.0
+
+Begin of MPIRandomAccess section.
+Running on 32 processors (PowerofTwo)
+Total Main table size = 2^33 = 8589934592 words
+PE Main table size = 2^28 = 268435456 words/PE
+Default number of updates (RECOMMENDED) = 34359738368
+Number of updates EXECUTED = 2499091424 (for a TIME BOUND of 60.00 secs)
+CPU time used = 59.568995 seconds
+Real time used = 59.572941 seconds
+0.041950110 Billion(10^9) Updates    per second [GUP/s]
+0.001310941 Billion(10^9) Updates/PE per second [GUP/s]
+Verification:  CPU time used = 45.434425 seconds
+Verification:  Real time used = 83.682727 seconds
+Found 0 errors in 8589934592 locations (passed).
+Current time (1587011869) is Thu Apr 16 04:37:49 2020
+
+End of MPIRandomAccess section.
+Begin of StarRandomAccess section.
+Main table size   = 2^28 = 268435456 words
+Number of updates = 1073741824
+CPU time used  = 67.479432 seconds
+Real time used = 67.479814 seconds
+0.015912045 Billion(10^9) Updates    per second [GUP/s]
+Found 0 errors in 268435456 locations (passed).
+Node(s) with error 0
+Minimum GUP/s 0.015408
+Average GUP/s 0.021729
+Maximum GUP/s 0.024503
+Current time (1587011974) is Thu Apr 16 04:39:34 2020
+
+End of StarRandomAccess section.
+Begin of SingleRandomAccess section.
+Node(s) with error 0
+Node selected 14
+Single GUP/s 0.026600
+Current time (1587012039) is Thu Apr 16 04:40:39 2020
+
+End of SingleRandomAccess section.
+Begin of MPIRandomAccess_LCG section.
+Running on 32 processors (PowerofTwo)
+Total Main table size = 2^33 = 8589934592 words
+PE Main table size = 2^28 = 268435456 words/PE
+Default number of updates (RECOMMENDED) = 34359738368
+Number of updates EXECUTED = 2510424448 (for a TIME BOUND of 60.00 secs)
+CPU time used = 59.931308 seconds
+Real time used = 59.931492 seconds
+0.041888235 Billion(10^9) Updates    per second [GUP/s]
+0.001309007 Billion(10^9) Updates/PE per second [GUP/s]
+Verification:  CPU time used = 43.635959 seconds
+Verification:  Real time used = 71.912960 seconds
+Found 0 errors in 8589934592 locations (passed).
+Current time (1587012181) is Thu Apr 16 04:43:01 2020
+
+End of MPIRandomAccess_LCG section.
+Begin of StarRandomAccess_LCG section.
+Main table size   = 2^28 = 268435456 words
+Number of updates = 1073741824
+CPU time used  = 73.584229 seconds
+Real time used = 73.584629 seconds
+0.014591931 Billion(10^9) Updates    per second [GUP/s]
+Found 0 errors in 268435456 locations (passed).
+Node(s) with error 0
+Minimum GUP/s 0.013928
+Average GUP/s 0.021027
+Maximum GUP/s 0.023974
+Current time (1587012291) is Thu Apr 16 04:44:51 2020
+
+End of StarRandomAccess_LCG section.
+Begin of SingleRandomAccess_LCG section.
+Node(s) with error 0
+Node selected 18
+Single GUP/s 0.037286
+Current time (1587012344) is Thu Apr 16 04:45:44 2020
+
+End of SingleRandomAccess_LCG section.
+Begin of PTRANS section.
+M: 20000
+N: 20000
+MB: 384
+NB: 384
+P: 2
+Q: 2
+TIME   M     N    MB  NB  P   Q     TIME   CHECK   GB/s   RESID
+---- ----- ----- --- --- --- --- -------- ------ -------- -----
+WALL 20000 20000 384 384   2   2     1.71 PASSED    1.868  0.00
+CPU  20000 20000 384 384   2   2     1.58 PASSED    2.023  0.00
+WALL 20000 20000 384 384   2   2     1.73 PASSED    1.850  0.00
+CPU  20000 20000 384 384   2   2     1.59 PASSED    2.010  0.00
+WALL 20000 20000 384 384   2   2     1.71 PASSED    1.850  0.00
+CPU  20000 20000 384 384   2   2     1.59 PASSED    2.016  0.00
+WALL 20000 20000 384 384   2   2     1.94 PASSED    1.651  0.00
+CPU  20000 20000 384 384   2   2     1.79 PASSED    1.792  0.00
+WALL 20000 20000 384 384   2   2     1.79 PASSED    1.651  0.00
+CPU  20000 20000 384 384   2   2     1.65 PASSED    1.941  0.00
+
+Finished    5 tests, with the following results:
+    5 tests completed and passed residual checks.
+    0 tests completed and failed residual checks.
+    0 tests skipped because of illegal input values.
+
+END OF TESTS.
+Current time (1587012403) is Thu Apr 16 04:46:43 2020
+
+End of PTRANS section.
+Begin of StarDGEMM section.
+Scaled residual: 0.00640839
+Node(s) with error 0
+Minimum Gflop/s 76.860623
+Average Gflop/s 79.045821
+Maximum Gflop/s 80.187718
+Current time (1587012455) is Thu Apr 16 04:47:35 2020
+
+End of StarDGEMM section.
+Begin of SingleDGEMM section.
+Node(s) with error 0
+Node selected 27
+Single DGEMM Gflop/s 87.930481
+Current time (1587012501) is Thu Apr 16 04:48:21 2020
+
+End of SingleDGEMM section.
+Begin of StarSTREAM section.
+-------------------------------------------------------------
+This system uses 8 bytes per DOUBLE PRECISION word.
+-------------------------------------------------------------
+Array size = 133333333, Offset = 0
+Total memory required = 2.9802 GiB.
+Each test is run 10 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+The SCALAR value used for this run is 0.420000
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 339091 microseconds.
+   (= 339091 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+VERBOSE: total setup time for rank 0 = 1.980984 seconds
+-------------------------------------------------------------
+Function      Rate (GB/s)   Avg time     Min time     Max time
+Copy:           5.3664       0.3980       0.3975       0.3985
+Scale:          4.1543       0.5139       0.5135       0.5142
+Add:            4.6614       0.6868       0.6865       0.6871
+Triad:          4.6516       0.6882       0.6879       0.6884
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+Node(s) with error 0
+Minimum Copy GB/s 5.366421
+Average Copy GB/s 5.366421
+Maximum Copy GB/s 5.366421
+Minimum Scale GB/s 4.154279
+Average Scale GB/s 4.154279
+Maximum Scale GB/s 4.154279
+Minimum Add GB/s 4.661442
+Average Add GB/s 4.661442
+Maximum Add GB/s 4.661442
+Minimum Triad GB/s 4.651621
+Average Triad GB/s 4.651621
+Maximum Triad GB/s 4.651621
+Current time (1587012527) is Thu Apr 16 04:48:47 2020
+
+End of StarSTREAM section.
+Begin of SingleSTREAM section.
+Node(s) with error 0
+Node selected 20
+Single STREAM Copy GB/s 9.918638
+Single STREAM Scale GB/s 12.167418
+Single STREAM Add GB/s 12.827136
+Single STREAM Triad GB/s 12.597311
+Current time (1587012538) is Thu Apr 16 04:48:58 2020
+
+End of SingleSTREAM section.
+Begin of MPIFFT section.
